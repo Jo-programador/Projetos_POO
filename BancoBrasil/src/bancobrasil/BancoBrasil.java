@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class BancoBrasil {
 
     public static void main(String[] args) {
-        ContaBancaria ContaBancaria1 = new ContaBancaria (); 
-        ContaBancaria ContaBancaria2 = new ContaBancaria(); 
+        ContaBancaria ContaBancaria1 = new ContaBancaria();
+        ContaBancaria ContaBancaria2 = new ContaBancaria();
         /*
         ContaBancaria1.agencia = "0001";
         ContaBancaria1.conta = "1234";
@@ -16,19 +16,29 @@ public class BancoBrasil {
                 + ContaBancaria1.conta + "\n" 
                 + ContaBancaria1.proprietario + "\n"
                 + ContaBancaria1.saldo);
-        */
-        
-        Scanner scan = new Scanner (System.in);
+         */
+
+        Scanner scan = new Scanner(System.in);
         System.out.println("BEM VINDO AO BANCO DO BRASIL");
         System.out.println("CADASTRO DE CONTAS");
         System.out.println("Digite a agência -> ");
         ContaBancaria1.agencia = scan.next();
         System.out.println("\nDigite a conta -> ");
-        ContaBancaria1.conta =  scan.next();
+        ContaBancaria1.conta = scan.next();
         System.out.println("\nDigite o proprietário -> ");
         ContaBancaria1.proprietario = scan.next();
-        System.out.println("\nDigite o saldo inicial -> ");
-        ContaBancaria1.saldo = scan.nextDouble();
+        System.out.println("\nDigite o valor do deposito -> ");
+        ContaBancaria1.depositar(scan.nextDouble());
+
+        System.out.println("\n" + ContaBancaria1.agencia + "\n"
+                + ContaBancaria1.conta + "\n"
+                + ContaBancaria1.proprietario + "\n"
+                + ContaBancaria1.consultarSaldo());
+
+        System.out.println("\n\n Digite o valor para saque -> ");
+        ContaBancaria1.sacar(scan.nextDouble());
+        
+        System.out.println(ContaBancaria1.consultarSaldo());
+        
     }
-    
 }
