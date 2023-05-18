@@ -8,7 +8,7 @@ public class Usuario {
         Date dataRegistro = new Date();
         
       String imprimirInfo(){       
-            return String.format("Nome: %s\n, Sobrenome: %s\n, Telefone: %s\n, DataRegistro: %s",
+            return String.format("INFORMAÇÕES DO CLIENTE: \nNome: %s\n, Sobrenome: %s\n, Telefone: %s\n, DataRegistro: %s",
                     this.nome, this.sobrenome, this.telefone, this.dataRegistro);
     }
 }        
