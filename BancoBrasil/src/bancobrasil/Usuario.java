@@ -5,7 +5,7 @@ public class Usuario {
         String nome;
         String sobrenome;
         String telefone;
-        Date dataRegistro;
+        Date dataRegistro = new Date();
         
       String imprimirInfo(){       
             return String.format("Nome: %s\n, Sobrenome: %s\n, Telefone: %s\n, DataRegistro: %s",
