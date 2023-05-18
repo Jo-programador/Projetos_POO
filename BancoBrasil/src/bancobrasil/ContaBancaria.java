@@ -15,10 +15,16 @@ public class ContaBancaria {
                 System.out.println("SALDO INSUFICIENTE VAGANUNDO!!");                
             }else{
                this.saldo -= valor;
-            }
+            }                  
     }
         
-        void tranferi() {
+        void tranferir(ContaBancaria contabancaria, double valor) { //Metodo com parametro
+            if(valor <= saldo){
+               this.sacar(valor); 
+               contabancaria.saldo += valor; 
+            }else
+               System.out.println("SALDO INSUFICIENTE VAGANUNDO!!"); 
+                                                               
     }
         
         String consultarSaldo(){ ///Metado sem parametro
