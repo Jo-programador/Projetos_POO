@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BancoBrasil {
 
-    public static void main(String[] args) {
+    public static void man(String[] args) {
         ContaBancaria ContaBancaria1 = new ContaBancaria();
         ContaBancaria ContaBancaria2 = new ContaBancaria();
         Usuario user1 = new Usuario();       
