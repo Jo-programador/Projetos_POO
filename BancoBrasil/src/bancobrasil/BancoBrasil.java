@@ -7,7 +7,8 @@ public class BancoBrasil {
     public static void main(String[] args) {
         ContaBancaria ContaBancaria1 = new ContaBancaria();
         ContaBancaria ContaBancaria2 = new ContaBancaria();
-        Usuario user1 = new Usuario();
+        Usuario user1 = new Usuario();       
+        Usuario user2 = new Usuario("Jolivan", "Abreu", "85988877606");
         /*
         ContaBancaria1.agencia = "0001";
         ContaBancaria1.conta = "1234";
@@ -29,11 +30,11 @@ public class BancoBrasil {
         //Construção e inserção de dados do usuario
         System.out.println("\nDados do Usuário");
         System.out.println("Digite o nome do cliente -> ");
-        user1.nome = scan.next();
+        user2.nome = scan.next();
         System.out.println("Digite o sobrenome do cliente -> ");
-        user1.sobrenome = scan.next();
+        user2.sobrenome = scan.next();
         System.out.println("Digite o telefone do cliente -> ");
-        user1.telefone = scan.next();
+        user2.telefone = scan.next();
         ContaBancaria1.proprietario = user1;
         
         System.out.println("\nDigite o valor do deposito -> ");
