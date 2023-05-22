@@ -73,6 +73,7 @@ public class BancoBrasil {
                         user.setSobrenome(scan.next());
                         System.out.println("Telefone");
                         user.setTelefone(scan.next());
+                        
 
                         users[i] = user;
                     }
@@ -95,6 +96,8 @@ public class BancoBrasil {
                         int userOpcao = scan.nextInt();
                         if (userOpcao == 1) {
                             conta.setProprietario(users[userOpcao-1]);
+                            System.out.println("\nDigite o valor do deposito -> ");
+                            ContaBancaria1.depositar(scan.nextDouble());
                         } else {
                             System.out.println("NENHUM USUARIO CADASTRADO");
                         }
