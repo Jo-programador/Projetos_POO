@@ -21,10 +21,10 @@ public class Usuario {
     public String getNome(){
         return nome;
     }
-    public String getsobrenome(){
+    public String getobrenome(){
         return this.sobrenome;
     }
-    public String gettelefone(){
+    public String getTelefone(){
         return this.telefone;
     }
     public Date getdataRegistro(){

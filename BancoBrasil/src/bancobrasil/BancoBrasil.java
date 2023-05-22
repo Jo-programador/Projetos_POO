@@ -4,11 +4,10 @@ import java.util.Scanner;
 
 public class BancoBrasil {
 
-    public static void man(String[] args) {
+    public static void main(String[] args) {
         ContaBancaria ContaBancaria1 = new ContaBancaria();
         ContaBancaria ContaBancaria2 = new ContaBancaria();
-        Usuario user1 = new Usuario();       
-        Usuario user2 = new Usuario("Jolivan", "Abreu", "85988877606");
+        Usuario user1 = new Usuario();
         /*
         ContaBancaria1.agencia = "0001";
         ContaBancaria1.conta = "1234";
@@ -19,24 +18,22 @@ public class BancoBrasil {
                 + ContaBancaria1.proprietario + "\n"
                 + ContaBancaria1.saldo);
          */
-
+ /*
         Scanner scan = new Scanner(System.in);
         System.out.println("BEM VINDO AO BANCO DO BRASIL");
         System.out.println("CADASTRO DE CONTAS");
         System.out.println("Digite a agência -> ");
-        ContaBancaria1.agencia = scan.next();
+        ContaBancaria1.setAgencia(scan.next());
         System.out.println("\nDigite a conta -> ");
-        ContaBancaria1.conta = scan.next();
+        ContaBancaria1.setConta(scan.next());        
         //Construção e inserção de dados do usuario
         System.out.println("\nDados do Usuário");
         System.out.println("Digite o nome do cliente -> ");
-        user2.nome = scan.next();
+        user1.setNome(scan.next());
         System.out.println("Digite o sobrenome do cliente -> ");
-        user2.sobrenome = scan.next();
+        user1.setSobrenome(scan.next());
         System.out.println("Digite o telefone do cliente -> ");
-        user2.telefone = scan.next();
-        ContaBancaria1.proprietario = user1;
-        
+        user1.setTelefone(scan.next());               
         System.out.println("\nDigite o valor do deposito -> ");
         ContaBancaria1.depositar(scan.nextDouble());
 
@@ -49,6 +46,68 @@ public class BancoBrasil {
         ContaBancaria1.sacar(scan.nextDouble());
         
         System.out.println(ContaBancaria1.consultarSaldo());
-        
+         */
+        Scanner scan = new Scanner(System.in);
+        int opcao = 0;
+        Usuario user;
+        Usuario[] users = new Usuario[5];
+        ContaBancaria conta = new ContaBancaria();
+
+        while (opcao != 3) {
+            //1º Tela
+            System.out.println("***BANCO DO BRASIL***");
+            System.out.println("1 - Cadastro de Cliente");
+            System.out.println("2 - Cadastro de Conts");
+            System.out.println("3 - Sair");
+            System.out.print("Escolhe uma opção: \n");
+            opcao = scan.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    for (int i = 0; i < 2; i++) {
+                        user = new Usuario();
+                        System.out.println("***CADASTRO DE CLIENTE***");
+                        System.out.println("Nome: ");
+                        user.setNome(scan.next());
+                        System.out.println("Sobrenome: ");
+                        user.setSobrenome(scan.next());
+                        System.out.println("Telefone");
+                        user.setTelefone(scan.next());
+
+                        users[i] = user;
+                    }
+                    break;
+                case 2:
+                    System.out.println("***CADASTRO DE CONTA***");
+                    System.out.println("Agencia: ");
+                    conta.setAgencia(scan.next());
+                    System.out.println("Conta: ");
+                    conta.setConta(scan.next());
+                    System.out.println("CLIENTE CADASTRADO");
+                    if (users[0] == null) {
+                        System.out.println("USUARIO NÃO CADASTRADO");
+                    } else {
+                        for (int i = 0; i < 2; i++) {
+                            System.out.printf("%d - %s %s\n", i + 1, users[i].getNome(), users[i].getobrenome());
+                        }
+                        System.out.println("Selecione o cliente: ");
+                        user = new Usuario();
+                        int userOpcao = scan.nextInt();
+                        if (userOpcao == 1) {
+                            conta.setProprietario(users[userOpcao-1]);
+                        } else {
+                            System.out.println("NENHUM USUARIO CADASTRADO");
+                        }
+                        break;
+                    }
+
+                case 3:
+                    System.out.println("***ATÉ NUNCA MAIS!***");
+                    break;
+                default:
+                    System.out.println("Opção Invalida");
+            }
+        }
+
     }
 }
