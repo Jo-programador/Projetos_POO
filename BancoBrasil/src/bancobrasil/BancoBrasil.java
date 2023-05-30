@@ -1,6 +1,7 @@
 package bancobrasil;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class BancoBrasil {
 
@@ -64,7 +65,7 @@ public class BancoBrasil {
 
             switch (opcao) {
                 case 1:
-                    for (int i = 0; i < 2; i++) {
+                    for (int i = 0; i < 3; i++) {
                         user = new Usuario();
                         System.out.println("***CADASTRO DE CLIENTE***");
                         System.out.println("Nome: ");
@@ -73,7 +74,6 @@ public class BancoBrasil {
                         user.setSobrenome(scan.next());
                         System.out.println("Telefone");
                         user.setTelefone(scan.next());
-                        
 
                         users[i] = user;
                     }
@@ -88,14 +88,14 @@ public class BancoBrasil {
                     if (users[0] == null) {
                         System.out.println("USUARIO NÃO CADASTRADO");
                     } else {
-                        for (int i = 0; i < 2; i++) {
+                        for (int i = 0; i < 3; i++) {
                             System.out.printf("%d - %s %s\n", i + 1, users[i].getNome(), users[i].getobrenome());
                         }
                         System.out.println("Selecione o cliente: ");
                         user = new Usuario();
                         int userOpcao = scan.nextInt();
                         if (userOpcao == 1) {
-                            conta.setProprietario(users[userOpcao-1]);
+                            conta.setProprietario(users[userOpcao - 1]);
                             System.out.println("\nDigite o valor do deposito -> ");
                             ContaBancaria1.depositar(scan.nextDouble());
                         } else {

@@ -2,7 +2,7 @@ package bancobrasil;
 
 import java.util.Date;
 
-public class Usuario {
+public abstract class Usuario {
 
     String nome;
     String sobrenome;
@@ -44,8 +44,7 @@ public class Usuario {
     public void setDataRegistro(Date dataRegistro){
         this.dataRegistro = dataRegistro;
     }
-    String imprimirInfo() {
-        return String.format("INFORMAÇÕES DO CLIENTE: \nNome: %s\n, Sobrenome: %s\n, Telefone: %s\n, DataRegistro: %s",
-                this.nome, this.sobrenome, this.telefone, this.dataRegistro);
-    }
+    
+    public abstract String imprimirInfo();
+        
 }
